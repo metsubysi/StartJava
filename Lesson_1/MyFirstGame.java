@@ -7,13 +7,13 @@ class MyFirstGame {
         while (num != random) {
            if (num < random) {
             num++;
-            System.out.printf("Число " + num + " больше того, что загадал компьютер" + "\n");
+            System.out.println("Число " + num + " больше того, что загадал компьютер");
            }
            if (num > random) {
             num--;
-            System.out.printf("Число " + num + " меньше того, что загадал компьютер" + "\n");
+            System.out.println("Число " + num + " меньше того, что загадал компьютер");
            }
         }
-        System.out.printf("Вы победили!" + "\n");
+        System.out.println("Вы победили!");
     }
 }

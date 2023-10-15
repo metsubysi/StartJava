@@ -10,7 +10,7 @@ class CyclesTheme {
             }
             i++;
         } while(i < 22);
-        System.out.printf("В отрезке [-10, 21] сумма четных чисел = " + evenNumber + ", а нечетных = " + oddNumber + "\n\n");
+        System.out.println("В отрезке [-10, 21] сумма четных чисел = " + evenNumber + ", а нечетных = " + oddNumber + "\n");
 
         System.out.println("2. Вывод чисел в порядке убывания");
         int num_1 = 10, num_2 = 5, num_3 = -1, maxNum = 0, minNum = 0;
@@ -50,7 +50,7 @@ class CyclesTheme {
             System.out.printf((numberLesson_3 % 10) + "");
             numberLesson_3 = numberLesson_3 / 10;
         }
-        System.out.printf("\nCyмма цифр = " + sumOfDigits + "\n\n");
+        System.out.println("\nCyмма цифр = " + sumOfDigits + "\n");
 
         System.out.println("4. Вывод чисел в несколько строк");
         int firstNum = 1, lastNum = 30, numLines = 0, counterLines = 0, numberOfIntegers = 0, counterSimple;
@@ -85,9 +85,9 @@ class CyclesTheme {
             numberLesson_5 = numberLesson_5 / 10;
         }
         if ((counter_5 % 2) == 0) {
-            System.out.printf(" (четное) количество двоек - " + counter_5 + "\n\n");
+            System.out.println(" (четное) количество двоек - " + counter_5 + "\n");
         } else {
-            System.out.printf(" (не четное) количество двоек - " + counter_5 + "\n\n");
+            System.out.println(" (не четное) количество двоек - " + counter_5 + "\n");
         }
 
         System.out.println("6. Отображение геометрических фигур");

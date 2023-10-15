@@ -3,21 +3,21 @@ public class VariableNamesTheme {
         //цифра
         int digit = 5; 
         //сумма чисел
-        int sum = 11;
+        int sumNums = 11;
         //произведение цифр
-        int proizv = 30; 
+        int multiplication = 30; 
         //максимальное число
         int maxNum = 6; 
         //количество десятков
-        int decCount = 3; 
+        int tensCount = 3; 
         //вес собаки
         float dogWeight = 5.6f; 
         //исходное число
-        int firstNum = 6;
+        int startNum = 6;
         //процент по вкладу
         short procent = 47; 
         //(переменная хранит символ) &
-        String sumbolEnd = "&"; 
+        String ampersand = "&"; 
         //код ошибки
         int errorCode = 0; 
         //тип сообщения
@@ -25,13 +25,13 @@ public class VariableNamesTheme {
         //число нулей
         short zeroCount = 2; 
         //уникальное число
-        int uniNum = 11; 
+        int uniqueNum = 11; 
         //случайное число
         double randomNum = Math.random(); 
         //математическое выражение
-        String mathExpr = "x*x+3*x-67"; 
+        String mathExpression = "x*x+3*x-67"; 
         //выбор чего-либо
-        int choise = 0; 
+        int choice = 0; 
         //количество очков (в игре)
         int pointsCount = 99; 
         //максимальная длина строки
@@ -58,65 +58,65 @@ public class VariableNamesTheme {
         String filePath = "C://ProgramFiles//rex.java";
          //количество чисел в каждой строке
         int numInRow = 1; 
-        System.out.println("   1. Разные переменные");
-        System.out.printf("цифра = "+ digit +"\n");
-        System.out.printf("сумма чисел = "+ sum +"\n");
-        System.out.printf("произведение цифр = "+ proizv +"\n");
-        System.out.printf("максимальное число = "+ maxNum +"\n");
-        System.out.printf("количество десятков = "+ decCount +"\n");
-        System.out.printf("вес собаки = " + dogWeight + " кг." +"\n");
-        System.out.printf("исходное число = "+ firstNum +"\n");
-        System.out.printf("процент по вкладу = "+ procent +"\n");
-        System.out.printf("(переменная хранит символ) &: "+ sumbolEnd +"\n");
-        System.out.printf("код ошибки: "+ errorCode +"\n");
-        System.out.printf("тип сообщения: "+ messageType +"\n");
-        System.out.printf("число нулей = "+ zeroCount +"\n");
-        System.out.printf("уникальное число = "+ uniNum +"\n");
-        System.out.printf("случайное число = "+ randomNum +"\n");
-        System.out.printf("математическое выражение: "+ mathExpr +"\n");
-        System.out.printf("выбор чего-либо = "+ choise +"\n");
-        System.out.printf("количество очков (в игре) = "+ pointsCount +"\n");
-        System.out.printf("максимальная длина строки = "+ maxLengthLine +"\n");
-        System.out.printf("пункт меню: "+ menuItem +"\n");
-        System.out.printf("стоимость кофе на вынос = "+ priceCoffeTogo +"\n");
-        System.out.printf("дата начала: "+ startDate +"\n");
-        System.out.printf("окончание диапазона: "+ endRange +"\n");
-        System.out.printf("полное имя работника месяца: "+ fullNameMonthWorker +"\n");
-        System.out.printf("заголовок электронной книги: "+ ebookTitle +"\n");
-        System.out.printf("размер = "+ size +"\n");
-        System.out.printf("вместимость (чего-либо) = "+ capacity + " L" +"\n");
-        System.out.printf("счетчик = "+ counter +"\n");
-        System.out.printf("путь до файла: "+ filePath +"\n");
-        System.out.printf("количество чисел в каждой строке = "+ numInRow +"\n"+"\n");
+        System.out.println("\n   1. Разные переменные");
+        System.out.println("цифра = "+ digit);
+        System.out.println("сумма чисел = "+ sumNums);
+        System.out.println("произведение цифр = "+ multiplication);
+        System.out.println("максимальное число = "+ maxNum);
+        System.out.println("количество десятков = "+ tensCount);
+        System.out.println("вес собаки = " + dogWeight + " кг.");
+        System.out.println("исходное число = "+ startNum);
+        System.out.println("процент по вкладу = "+ procent);
+        System.out.println("(переменная хранит символ) &: "+ ampersand);
+        System.out.println("код ошибки: "+ errorCode);
+        System.out.println("тип сообщения: "+ messageType);
+        System.out.println("число нулей = "+ zeroCount);
+        System.out.println("уникальное число = "+ uniqueNum);
+        System.out.println("случайное число = "+ randomNum);
+        System.out.println("математическое выражение: " + mathExpression);
+        System.out.println("выбор чего-либо = "+ choice);
+        System.out.println("количество очков (в игре) = " + pointsCount);
+        System.out.println("максимальная длина строки = " + maxLengthLine);
+        System.out.println("пункт меню: " + menuItem);
+        System.out.println("стоимость кофе на вынос = "+ priceCoffeTogo);
+        System.out.println("дата начала: "+ startDate);
+        System.out.println("окончание диапазона: "+ endRange);
+        System.out.println("полное имя работника месяца: "+ fullNameMonthWorker);
+        System.out.println("заголовок электронной книги: "+ ebookTitle);
+        System.out.println("размер = "+ size);
+        System.out.println("вместимость (чего-либо) = "+ capacity + " L");
+        System.out.println("счетчик = "+ counter);
+        System.out.println("путь до файла: "+ filePath);
+        System.out.println("количество чисел в каждой строке = "+ numInRow +"\n");
 
         //сотни равны?
-        boolean is_hund_equal = false; 
+        boolean isEqualHundreads = false; 
         //компьютер включен?
-        boolean is_computer_on = true; 
+        boolean isComputerOn = true; 
         //есть равные цифры?
-        boolean is_dif_num = false; 
+        boolean isEqualNum = false; 
         //(что-либо) создано?
-        boolean is_create = true; 
+        boolean isCreate = true; 
         //(что-либо) пусто?
-        boolean is_empty = false; 
+        boolean isEmpty = false; 
         //(что-либо) активный?
-        boolean is_active = true; 
+        boolean isActive = true; 
         //новый?
-        boolean is_new = false; 
+        boolean isNew = false; 
         //электронная почта действительная?
-        boolean is_email_valid = true; 
+        boolean isEmailValid = true; 
         //имеются уникальные строки?
-        boolean is_uni_line = true; 
+        boolean isUniqueLines = true; 
         System.out.println("    2. boolean-переменные");
-        System.out.printf("сотни равны?: "+ is_hund_equal +"\n");
-        System.out.printf("компьютер включен?: "+ is_computer_on +"\n");
-        System.out.printf("есть равные цифры?: "+ is_dif_num +"\n");
-        System.out.printf("(что-либо) создано?: "+ is_create +"\n");
-        System.out.printf("(что-либо) пусто?: "+ is_empty +"\n");
-        System.out.printf("(что-либо) активный?: "+ is_active +"\n");
-        System.out.printf("новый?: "+ is_new +"\n");
-        System.out.printf("электронная почта действительная?: "+ is_email_valid +"\n");
-        System.out.printf("имеются уникальные строки?: "+ is_uni_line +"\n" +"\n");
+        System.out.println("сотни равны?: "+ isEqualHundreads);
+        System.out.println("компьютер включен?: "+ isComputerOn);
+        System.out.println("есть равные цифры?: "+ isEqualNum);
+        System.out.println("(что-либо) создано?: "+ isCreate);
+        System.out.println("(что-либо) пусто?: "+ isEmpty);
+        System.out.println("(что-либо) активный?: "+ isActive);
+        System.out.println("новый?: "+ isNew);
+        System.out.println("электронная почта действительная?: "+ isEmailValid);
+        System.out.println("имеются уникальные строки?: "+ isUniqueLines +"\n");
 
         //старый universally unique identifier
         String oldUuid = "UUID"; 
@@ -127,18 +127,18 @@ public class VariableNamesTheme {
         //протокол передачи гипертекста
         String http = "http"; 
         //сокращенный uniform resource locator
-        String url = "URL"; 
+        String shortURL = "URL"; 
         //новый идентификатор клиента
         String newId = "new client ID"; 
         //кодировка american standard code for information interchange
         String ascii = "ASCII"; 
         System.out.println("    3. Аббревиатуры");
-        System.out.printf("старый universally unique identifier: "+ oldUuid +"\n");
-        System.out.printf("производитель оперативной памяти: "+ ddrMaker +"\n");
-        System.out.printf("емкость жесткого диска: "+ hddSize +"\n");
-        System.out.printf("протокол передачи гипертекста: "+ http +"\n");
-        System.out.printf("сокращенный uniform resource locator: "+ url +"\n");
-        System.out.printf("новый идентификатор клиента: "+ newId +"\n");
-        System.out.printf("кодировка american standard code for information interchange: "+ ascii);
+        System.out.println("старый universally unique identifier: "+ oldUuid);
+        System.out.println("производитель оперативной памяти: "+ ddrMaker);
+        System.out.println("емкость жесткого диска: "+ hddSize);
+        System.out.println("протокол передачи гипертекста: "+ http);
+        System.out.println("сокращенный uniform resource locator: "+ shortURL);
+        System.out.println("новый идентификатор клиента: "+ newId);
+        System.out.println("кодировка american standard code for information interchange: "+ ascii);
     }
 }
