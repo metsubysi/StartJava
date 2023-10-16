@@ -1,5 +1,6 @@
 public class VariableNamesTheme {
     public static void main(String[] args) {
+        System.out.println("\n   1. Разные переменные");
         //цифра
         int digit = 5; 
         //сумма чисел
@@ -15,7 +16,7 @@ public class VariableNamesTheme {
         //исходное число
         int startNum = 6;
         //процент по вкладу
-        short procent = 47; 
+        short percent = 47; 
         //(переменная хранит символ) &
         String ampersand = "&"; 
         //код ошибки
@@ -33,7 +34,7 @@ public class VariableNamesTheme {
         //выбор чего-либо
         int choice = 0; 
         //количество очков (в игре)
-        int pointsCount = 99; 
+        int score = 99; 
         //максимальная длина строки
         int maxLengthLine = 56; 
         //пункт меню
@@ -58,37 +59,38 @@ public class VariableNamesTheme {
         String filePath = "C://ProgramFiles//rex.java";
          //количество чисел в каждой строке
         int numInRow = 1; 
-        System.out.println("\n   1. Разные переменные");
-        System.out.println("цифра = "+ digit);
-        System.out.println("сумма чисел = "+ sumNums);
-        System.out.println("произведение цифр = "+ multiplication);
-        System.out.println("максимальное число = "+ maxNum);
-        System.out.println("количество десятков = "+ tensCount);
+
+        System.out.println("цифра = " + digit);
+        System.out.println("сумма чисел = " + sumNums);
+        System.out.println("произведение цифр = " + multiplication);
+        System.out.println("максимальное число = " + maxNum);
+        System.out.println("количество десятков = " + tensCount);
         System.out.println("вес собаки = " + dogWeight + " кг.");
-        System.out.println("исходное число = "+ startNum);
-        System.out.println("процент по вкладу = "+ procent);
-        System.out.println("(переменная хранит символ) &: "+ ampersand);
-        System.out.println("код ошибки: "+ errorCode);
-        System.out.println("тип сообщения: "+ messageType);
-        System.out.println("число нулей = "+ zeroCount);
-        System.out.println("уникальное число = "+ uniqueNum);
-        System.out.println("случайное число = "+ randomNum);
+        System.out.println("исходное число = " + startNum);
+        System.out.println("процент по вкладу = " + percent);
+        System.out.println("(переменная хранит символ) &: " + ampersand);
+        System.out.println("код ошибки: " + errorCode);
+        System.out.println("тип сообщения: " + messageType);
+        System.out.println("число нулей = " + zeroCount);
+        System.out.println("уникальное число = " + uniqueNum);
+        System.out.println("случайное число = " + randomNum);
         System.out.println("математическое выражение: " + mathExpression);
-        System.out.println("выбор чего-либо = "+ choice);
-        System.out.println("количество очков (в игре) = " + pointsCount);
+        System.out.println("выбор чего-либо = " + choice);
+        System.out.println("количество очков (в игре) = " + score);
         System.out.println("максимальная длина строки = " + maxLengthLine);
         System.out.println("пункт меню: " + menuItem);
-        System.out.println("стоимость кофе на вынос = "+ priceCoffeTogo);
-        System.out.println("дата начала: "+ startDate);
-        System.out.println("окончание диапазона: "+ endRange);
-        System.out.println("полное имя работника месяца: "+ fullNameMonthWorker);
-        System.out.println("заголовок электронной книги: "+ ebookTitle);
-        System.out.println("размер = "+ size);
-        System.out.println("вместимость (чего-либо) = "+ capacity + " L");
-        System.out.println("счетчик = "+ counter);
-        System.out.println("путь до файла: "+ filePath);
-        System.out.println("количество чисел в каждой строке = "+ numInRow +"\n");
+        System.out.println("стоимость кофе на вынос = " + priceCoffeTogo);
+        System.out.println("дата начала: " + startDate);
+        System.out.println("окончание диапазона: " + endRange);
+        System.out.println("полное имя работника месяца: " + fullNameMonthWorker);
+        System.out.println("заголовок электронной книги: " + ebookTitle);
+        System.out.println("размер = " + size);
+        System.out.println("вместимость (чего-либо) = " + capacity + " L");
+        System.out.println("счетчик = " + counter);
+        System.out.println("путь до файла: " + filePath);
+        System.out.println("количество чисел в каждой строке = " + numInRow + "\n");
 
+        System.out.println("    2. boolean-переменные");
         //сотни равны?
         boolean isEqualHundreads = false; 
         //компьютер включен?
@@ -107,10 +109,10 @@ public class VariableNamesTheme {
         boolean isEmailValid = true; 
         //имеются уникальные строки?
         boolean isUniqueLines = true; 
-        System.out.println("    2. boolean-переменные");
-        System.out.println("сотни равны?: "+ isEqualHundreads);
-        System.out.println("компьютер включен?: "+ isComputerOn);
-        System.out.println("есть равные цифры?: "+ isEqualNum);
+
+        System.out.println("сотни равны?: " + isEqualHundreads);
+        System.out.println("компьютер включен?: " + isComputerOn);
+        System.out.println("есть равные цифры?: " + isEqualNum);
         System.out.println("(что-либо) создано?: "+ isCreate);
         System.out.println("(что-либо) пусто?: "+ isEmpty);
         System.out.println("(что-либо) активный?: "+ isActive);
@@ -118,6 +120,7 @@ public class VariableNamesTheme {
         System.out.println("электронная почта действительная?: "+ isEmailValid);
         System.out.println("имеются уникальные строки?: "+ isUniqueLines +"\n");
 
+        System.out.println("    3. Аббревиатуры");
         //старый universally unique identifier
         String oldUuid = "UUID"; 
         //производитель оперативной памяти
@@ -127,17 +130,17 @@ public class VariableNamesTheme {
         //протокол передачи гипертекста
         String http = "http"; 
         //сокращенный uniform resource locator
-        String shortURL = "URL"; 
+        String shortUrl = "URL"; 
         //новый идентификатор клиента
         String newId = "new client ID"; 
         //кодировка american standard code for information interchange
         String ascii = "ASCII"; 
-        System.out.println("    3. Аббревиатуры");
+        
         System.out.println("старый universally unique identifier: "+ oldUuid);
         System.out.println("производитель оперативной памяти: "+ ddrMaker);
         System.out.println("емкость жесткого диска: "+ hddSize);
         System.out.println("протокол передачи гипертекста: "+ http);
-        System.out.println("сокращенный uniform resource locator: "+ shortURL);
+        System.out.println("сокращенный uniform resource locator: "+ shortUrl);
         System.out.println("новый идентификатор клиента: "+ newId);
         System.out.println("кодировка american standard code for information interchange: "+ ascii);
     }
