@@ -7,33 +7,33 @@ class IfElseStatementTheme {
         char firstLetter;
         if (!genderIsMale) {
             System.out.println("Женский пол");
-        }
-            else {
-                System.out.println("Myжскoй пол");
-            }            
+        } else {
+            System.out.println("Myжскoй пол");
+        }            
         if (age > 18) {
             System.out.println("Cовершеннолетний");
+        } else {
+            System.out.println("Hесовершеннолетний");
         }
-            else {
-                System.out.println("Hесовершеннолетний");
-            }
         if (height < 1.8) {
             System.out.println("Hизкий");
+        } else {
+            System.out.println("Высокий");
         }
-            else {
-                System.out.println("Высокий");
-            }
         firstLetter = "Serhii".charAt(0);
         if (firstLetter == 'M') {
             System.out.println("Первая буква имени M");
-        } else if (firstLetter == 'I') {
+        } else {
+            if (firstLetter == 'I') {
                 System.out.println("Первая буква имени I");
             } else {
                 System.out.printf("Первая буква имени: " + firstLetter+ "\n \n");
             }
+        }
 
         System.out.println("2. Поиск большего числа");
-        int a = 1111, b = 111;
+        int a = 1111;
+        int b = 111;
         if (a > b) {
             System.out.println("a > b \n");
         } else {
@@ -41,7 +41,8 @@ class IfElseStatementTheme {
                 System.out.println("a < b \n");
             } else {
                 System.out.println("a = b \n");
-        }}
+            }
+        }
 
         System.out.println("3. Проверка числа");
         int checkNumber = -11;
@@ -49,46 +50,47 @@ class IfElseStatementTheme {
             System.out.println("Число является: 0 \n");
             } else {
                 if (checkNumber < 0) {
-                    System.out.print("Число "+checkNumber+" является отрицательным");
-                    } else {
-                        System.out.print("Число "+checkNumber+" является положительным");
-                    }
+                    System.out.print("Число " + checkNumber + " является отрицательным");
+                } else {
+                    System.out.print("Число " + checkNumber + " является положительным");
+                }
                 if ((checkNumber % 2) == 0) {
-                    System.out.println(" и чётным");
-                    } else {
-                        System.out.println(" и не чётным \n");
-                    }}
+                    System.out.println(" и чётным \n");
+                } else {
+                    System.out.println(" и не чётным \n");
+                }
+            }
 
         System.out.println("4. Поиск одинаковых цифр в числах");
-        int num_1 = 234, num_2 = 234, countNum = 0;
+        int num1 = 234, num2 = 234, countNum = 0;
         String theSameDigits = "", numberPlace = "";
-        if ((num_1 / 100) == (num_2 / 100)) {
-            theSameDigits = theSameDigits + (num_1 / 100) + " ";
+        if ((num1 / 100) == (num2 / 100)) {
+            theSameDigits = theSameDigits + (num1 / 100) + " ";
             numberPlace = numberPlace + "100-й ";
             countNum ++;
         }
-        if (((num_1 % 100)/10) == ((num_2 % 100)/10)) {
-            theSameDigits = theSameDigits + ((num_2 % 100)/10) + " ";
+        if (((num1 % 100)/10) == ((num2 % 100)/10)) {
+            theSameDigits = theSameDigits + ((num2 % 100)/10) + " ";
             numberPlace = numberPlace + "10-й ";
             countNum ++;
         }
-        if ((num_1 % 10) == (num_2 % 10)) {
-            theSameDigits = theSameDigits + (num_2 % 10) + " ";
+        if ((num1 % 10) == (num2 % 10)) {
+            theSameDigits = theSameDigits + (num2 % 10) + " ";
             numberPlace = numberPlace + "1-й ";
             countNum ++;
         }
         if (countNum > 0) {
-            System.out.println("В числах "+ num_1 + " и " + num_2);
+            System.out.println("В числах "+ num1 + " и " + num2);
             System.out.println("Одинаковые цифры: " + theSameDigits);
-            System.out.printf("Разряды: " + numberPlace+"\n\n");
+            System.out.println("Разряды: " + numberPlace+"\n");
         } else {
-            System.out.printf(" Нет совпадений \n\n");
+            System.out.println(" Нет совпадений \n");
         }
 
         System.out.println("5. Определение символа по его коду");
         char symbol = '\u0057';
         if ((symbol < '\u005B') && ((symbol > '\u0040'))) {
-            System.out.println("Смвол " + symbol + " является большой буквой \n");
+            System.out.println("Смвол " + symbol + " является большой буквой\n");
         } else {
             if ((symbol > '\u002F') && ((symbol < '\u003A'))) {
                 System.out.println("Символ " + symbol + " является цифрой\n");
@@ -96,7 +98,7 @@ class IfElseStatementTheme {
                 if ((symbol > '\u0060') && ((symbol < '\u007B'))) {
                     System.out.println("Символ " + symbol + " является маленькой буквой\n");
                 } else {
-                    System.out.println("Символ " + symbol + " не является не буквой не цифрой \n");
+                    System.out.println("Символ " + symbol + " не является не буквой не цифрой\n");
                 }
             }
         }
@@ -117,7 +119,10 @@ class IfElseStatementTheme {
         System.out.println("итоговaя суммa: " + (credited+deposit) + "\n");
 
         System.out.println("7. Определение оценки по предметам");
-        int historyPers = 59, programPers = 92, historyPoint = 0, programPoint = 0;
+        int historyPers = 59;
+        int programPers = 92;
+        int historyPoint = 0;
+        int programPoint = 0;
         if (historyPers <= 60) {historyPoint = 2;}
         if (historyPers > 60) {historyPoint = 3;}
         if (historyPers > 73) {historyPoint = 4;}
@@ -128,18 +133,19 @@ class IfElseStatementTheme {
         if (programPers > 91) {programPoint = 5;}
         System.out.println("История: " + historyPoint);
         System.out.println("Программирование: " + programPoint);
-        System.out.println("Cредний балл оценок по предметам: " + (programPoint + historyPoint)/2f);
-        System.out.println("средний %% по предметам: " + (programPers + historyPers)/2 + "\n");
+        System.out.println("Cредний балл оценок по предметам: " + (programPoint + historyPoint) / 2f);
+        System.out.println("средний %% по предметам: " + (programPers + historyPers) / 2 + "\n");
 
         System.out.println("8. Расчет годовой прибыли");
-        int monthlyProfit = 13000, monthlyRent = 4000, monthlyCostPrice = 9000, yearlyProfit;
+        int monthlyProfit = 13000;
+        int monthlyRent = 4000;
+        int monthlyCostPrice = 9000;
+        int yearlyProfit;
         yearlyProfit = (monthlyProfit * 12) - ((monthlyRent + monthlyCostPrice) * 12);
         if (yearlyProfit > 0) {
             System.out.print("Прибыль за год: +" + yearlyProfit);
         } else {
             System.out.print("Прибыль за год: " + yearlyProfit);
         }
-
-
     }
 }

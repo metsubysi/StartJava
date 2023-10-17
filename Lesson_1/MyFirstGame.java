@@ -1,8 +1,8 @@
 class MyFirstGame {
     public static void main(String[] args) {
-        int num = 50, 
-            i = 1, 
-            random = (int) (Math.random() * 100);
+        int num = 50;
+        int i = 1;
+        int random = (int) (Math.random() * 100);
         System.out.printf(random + "\n");
         while (num != random) {
            if (num < random) {

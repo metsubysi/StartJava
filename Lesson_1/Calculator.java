@@ -1,9 +1,12 @@
 class Calculator {
     public static void main(String[] args) {
-        int a = 2, b = 8, result = 1, i = 0;
+        int a = 2;
+        int b = 8;
+        int result = 1;
+        int i = 0;
         char sign = '^';
         if (sign == '+') {
-            result = a+b;
+            result = a + b;
         } else {
             if (sign == '-') {
                 result = a-b;
