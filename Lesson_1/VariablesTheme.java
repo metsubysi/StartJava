@@ -22,12 +22,9 @@ class VariablesTheme {
         System.out.println("2. Расчет стоимости товара со скидкой");
         float penPrice = 100.00f;
         float bookPrice = 200.00f;
-        float finalPrice;
-        float discount;
-        float discountPrice;
-        finalPrice = penPrice + bookPrice;
-        discount = finalPrice*0.11f;
-        discountPrice = finalPrice - discount;
+        float finalPrice = penPrice + bookPrice;
+        float discount = finalPrice * 0.11f;
+        float discountPrice = finalPrice - discount;
         
         System.out.println("Общая стоимость товаров без скидки - " + finalPrice + " Руб.");
         System.out.println("Сумма скидки - " + discount + " Руб.");
@@ -38,9 +35,8 @@ class VariablesTheme {
         System.out.println("   J   a a  v   v  a a");                                                 
         System.out.println("J  J  aaaaa  V V  aaaaa");                                                
         System.out.println(" JJ  a     a  V  a     a");
-        System.out.println("");
 
-        System.out.println("4. Вывод min и max значений целых числовых типов");
+        System.out.println("\n4. Вывод min и max значений целых числовых типов");
         byte byteNum = Byte.MAX_VALUE;
         short shortNum = Short.MAX_VALUE;
         int intNum = Integer.MAX_VALUE;
@@ -62,11 +58,10 @@ class VariablesTheme {
         System.out.println("5. Перестановка значений переменных");
         int a = 2;
         int b = 5;
-        int c;
+        int c = a;
         
         System.out.println("C помощью третьей переменной");
         System.out.println("a = " + a + "; b = " + b);
-        c = a; 
         a = b; 
         b = c;
         System.out.println("a = " + a + "; b = " + b);
@@ -84,60 +79,46 @@ class VariablesTheme {
         System.out.println("a = " + a + "; b = " + b + " \n");
 
         System.out.printf("6. Вывод символов и их кодов\n");
-        char symbol36 = '$';
-        char symbol42 = '*';
-        char symbol64 = '@';
-        char symbol124 = '|';
-        char symbol126 = '~';
-        int num36; 
-        int num42;
-        int num64;
-        int  num124;
-        int num126;
-        num36 = (int) symbol36; 
-        num42 = (int) symbol42; 
-        num64 = (int) symbol64;
-        num124 = (int) symbol124; 
-        num126 = (int) symbol126;
+        char dollar = '$';
+        char asterisk = '*';
+        char at = '@';
+        char pipe = '|';
+        char tilde = '~';
         
-        System.out.println(num36 + ": " + symbol36);
-        System.out.println(num42 + ": " + symbol42);
-        System.out.println(num64 + ": " + symbol64);
-        System.out.println(num124 + ": " + symbol124);
-        System.out.println(num126 + ": " + symbol126 + "\n");
+        System.out.println((int) dollar + ": " + dollar);
+        System.out.println((int) asterisk + ": " + asterisk);
+        System.out.println((int) at + ": " + at);
+        System.out.println((int) pipe + ": " + pipe);
+        System.out.println((int) tilde + ": " + tilde + "\n");
 
         System.out.println("7. Вывод в консоль ASCII-арт Дюка");
-        char sym1 = '/';
-        char sym2 = '\\';
-        char sym3 = '(';
-        char sym4 = ')';
-        char sym5 = '_';
+        char slash = '/';
+        char backslash = '\\';
+        char left = '(';
+        char right = ')';
+        char underscore = '_';
         
-        System.out.println("    " + sym1 + sym2);                                                                                                                                       
-        System.out.println("   " + sym1 + "  " + sym2);                                                                                                                                      
-        System.out.println("  " + sym1 + sym5 + sym3 + " " + sym4 + sym2);                                                                                                                                     
-        System.out.println(" " + sym1 + "      " + sym2);                                                                                                                                    
-        System.out.println("" + sym1 + sym5 + sym5 + sym5 + sym5 + sym1 + sym2 + sym5 + sym5 + sym2 + "\n");
+        System.out.println("    " + slash + backslash);                                                                                                                                       
+        System.out.println("   " + slash + "  " + backslash);                                                                                                                                      
+        System.out.println("  " + slash + underscore + left + " " + right + backslash);                                                                                                                                     
+        System.out.println(" " + slash + "      " + backslash);                                                                                                                                    
+        System.out.println("" + slash + underscore + underscore + underscore + underscore + slash
+                              + backslash + underscore + underscore + backslash + "\n");
 
         System.out.println("8. Вывод количества сотен, десятков и единиц числа");
-        int n = 123; 
-        int hundreds; 
-        int tens; 
-        int ones; 
-        int summaOfDigits; 
-        int multiplicationOfDigits;
+        int number = 123; 
+        int hundreds = number / 100; 
+        int tens = number % 100 / 10; 
+        int ones = number % 10; 
+        int sumDigits = hundreds + tens + ones; 
+        int productDigits = ones * tens * hundreds;
         
-        hundreds = n / 100;
-        tens = n % 100 / 10;
-        ones = n % 10;
-        summaOfDigits = hundreds + tens + ones; 
-        multiplicationOfDigits = ones * tens * hundreds;
-        System.out.println("Число " + n + " содержит:");
+        System.out.println("Число " + number + " содержит:");
         System.out.println("сотен - " + hundreds);
         System.out.println("десятков - " + tens);
         System.out.println("единиц - " + ones);
-        System.out.println("Сумма его цифр = " + summaOfDigits);
-        System.out.println("Произведение = " + multiplicationOfDigits + "\n");
+        System.out.println("Сумма его цифр = " + sumDigits);
+        System.out.println("Произведение = " + productDigits + "\n");
 
         System.out.println("9. Вывод времени");
         int allSeconds = 86399;
