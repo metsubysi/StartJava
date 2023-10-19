@@ -67,15 +67,15 @@ class VariablesTheme {
         System.out.println("a = " + a + "; b = " + b);
         System.out.println("C помощью арифметических операций");
         System.out.println("a = " + a + "; b = " + b);
-        a = a + b; 
-        b = a - b; 
-        a = a - b;
+        a += b;
+        b = a - b;
+        a -= b;
         System.out.println("a = " + a + "; b = " + b);
         System.out.println("с помощью побитовой операции");
         System.out.println("a = " + a + "; b = " + b);
-        a = a ^ b; 
+        a ^= b; 
         b = a ^ b; 
-        a = a ^ b;
+        a ^= b;
         System.out.println("a = " + a + "; b = " + b + " \n");
 
         System.out.printf("6. Вывод символов и их кодов\n");
@@ -122,13 +122,10 @@ class VariablesTheme {
 
         System.out.println("9. Вывод времени");
         int allSeconds = 86399;
-        int hours;
-        int minutes;
-        int seconds;
+        int hours = allSeconds / 3600;
+        int minutes = allSeconds % 3600 / 60;
+        int seconds = allSeconds % 60;
         
-        hours = allSeconds / 3600;
-        minutes = allSeconds % 3600 / 60;
-        seconds = allSeconds % 60;
         System.out.println(hours + ":" + minutes + ":" + seconds);
     }
 } 
