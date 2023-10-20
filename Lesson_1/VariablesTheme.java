@@ -74,7 +74,7 @@ class VariablesTheme {
         System.out.println("с помощью побитовой операции");
         System.out.println("a = " + a + "; b = " + b);
         a ^= b; 
-        b = a ^ b; 
+        b ^= a; 
         a ^= b;
         System.out.println("a = " + a + "; b = " + b + " \n");
 
@@ -94,16 +94,16 @@ class VariablesTheme {
         System.out.println("7. Вывод в консоль ASCII-арт Дюка");
         char slash = '/';
         char backslash = '\\';
-        char left = '(';
-        char right = ')';
+        char leftBracket = '(';
+        char rightBracket = ')';
         char underscore = '_';
         
-        System.out.println("    " + slash + backslash);                                                                                                                                       
-        System.out.println("   " + slash + "  " + backslash);                                                                                                                                      
-        System.out.println("  " + slash + underscore + left + " " + right + backslash);                                                                                                                                     
-        System.out.println(" " + slash + "      " + backslash);                                                                                                                                    
-        System.out.println("" + slash + underscore + underscore + underscore + underscore + slash
-                              + backslash + underscore + underscore + backslash + "\n");
+        System.out.println("    " + slash + backslash);
+        System.out.println("   " + slash + "  " + backslash);
+        System.out.println("  " + slash + underscore + leftBracket + " " + rightBracket + backslash);
+        System.out.println(" " + slash + "      " + backslash);
+        System.out.println("" + slash + underscore + underscore + underscore + underscore +
+                slash + backslash + underscore + underscore + backslash + "\n");
 
         System.out.println("8. Вывод количества сотен, десятков и единиц числа");
         int number = 123; 

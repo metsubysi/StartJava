@@ -26,12 +26,10 @@ class CyclesTheme {
             } else {
                 maxNum = num3;
             }
+        } else if (num2 > num3) {
+            maxNum = num2;
         } else {
-            if (num2 > num3) {
-                maxNum = num2;
-            } else {
-                maxNum = num3;
-            }
+            maxNum = num3;
         }
         if (num1 < num2) {
             if (num1 < num3) {
@@ -39,11 +37,11 @@ class CyclesTheme {
             } else {
                 minNum = num3;
             }
+        } else if (num2 < num3) {
+            minNum = num2;
         } else {
-            if (num2 < num3) {
-                    minNum = num2;
-                } else {minNum = num3;}
-            }
+            minNum = num3;
+        }
         for (i = maxNum; i >= minNum; i--) {
             if ((i == num1) || (i == num2) || (i == num3)) {
                 System.out.printf(i + " ");
@@ -51,31 +49,29 @@ class CyclesTheme {
         }
         System.out.printf("\n\n");
 
-        System.out.println("3. Вывод чисел в порядке убывания");
-        int numberLesson_3 = 1234;
-        int sumOfDigits = 0;
-        while (numberLesson_3 > 0) {
-            sumOfDigits = sumOfDigits + (numberLesson_3 % 10);
-            System.out.printf((numberLesson_3 % 10) + "");
-            numberLesson_3 = numberLesson_3 / 10;
+        System.out.println("3. Вывод реверсивного числа и суммы его цифр");
+        int numberLesson3 = 1234;
+        int sumDigits = 0;
+        while (numberLesson3 > 0) {
+            sumDigits = sumDigits + (numberLesson3 % 10);
+            System.out.printf((numberLesson3 % 10) + "");
+            numberLesson3 = numberLesson3 / 10;
         }
-        System.out.println("\nCyмма цифр = " + sumOfDigits + "\n");
+        System.out.println("\nCyмма цифр = " + sumDigits + "\n");
 
         System.out.println("4. Вывод чисел в несколько строк");
-        int firstNum = 1, 
-        int lastNum = 30, 
-        int numLines = 0, 
-        int counterLines = 0, 
-        int numberOfIntegers = 0, 
-        int counterSimple;
+        int firstNum = 1;
+        int lastNum = 30;
+        int numLines = 0;
+        int numberOfIntegers = 0;
         numberOfIntegers = lastNum + 1 - firstNum;
         if ((numberOfIntegers % 10) > 0 ) {
             numLines = (numberOfIntegers / 10) + 1;
         } else {
             numLines = numberOfIntegers / 10;
         }
-        for (counterLines = 1; counterLines <= numLines; counterLines++) {
-            for (counterSimple = 1; counterSimple <= 10; counterSimple++) {
+        for (i = 1; i <= numLines; i++) {
+            for (int j = 1; j <= 10; j++) {
                 if (!((firstNum % 2) == 0)) {
                     if (firstNum > lastNum) {
                         System.out.printf("%" + 5 + "d", 0);
@@ -187,29 +183,21 @@ class CyclesTheme {
         System.out.println("Сумма цифр " + abc + " = " + s1 + ", а сумма " + def + " = " + s2 + "\n");
 
         System.out.println("10. Отображение таблицы умножения Пифагора");
-        int j = 0;
+        int j;
         for (i = 0; i < 10; i++) {
             for (j = 0; j < 10; j++) {
                 if ((i + j) == 0) {
                     System.out.print(" ");
-                } else { 
-                    if (i == 1) {
-                        System.out.print("--");
-                    } else {
-                        if (j == 0) {
-                            System.out.print(i + "");
-                        } else {
-                            if (j == 1) {
-                                System.out.print("|");
-                            } else {
-                                if (i == 0) {
-                                    System.out.printf("%2s", j + "");
-                                } else {
-                                    System.out.printf("%2s", j*i + "");
-                                }
-                            }
-                        }
-                    }
+                } else if (i == 1) {
+                    System.out.print("--");
+                } else if (j == 0) {
+                    System.out.print(i + "");
+                } else if (j == 1) {
+                    System.out.print("|");
+                } else if (i == 0) {
+                    System.out.printf("%2s", j + "");
+                } else {
+                    System.out.printf("%2s", j*i + "");
                 }
             }
             System.out.print("\n");
