@@ -43,16 +43,17 @@ class IfElseStatementTheme {
         int checkNumber = 11;
         if (checkNumber == 0) {
             System.out.println("Число является: 0 \n");
-        } else if (checkNumber < 0) {
-            if ((checkNumber % 2) == 0) {
-                System.out.println("Число " + checkNumber + " является отрицательным и чётным");
-            } else {
-                System.out.println("Число " + checkNumber + " является отрицательным и не чётным");
-            }
-        } else if ((checkNumber % 2) == 0) {
-            System.out.println("Число " + checkNumber + " является положительным и чётным");
         } else {
-            System.out.println("Число " + checkNumber + " является положительным и не чётным");
+            if (checkNumber < 0) {
+                System.out.print("Число " + checkNumber + " является отрицательным");
+            } else {
+                System.out.print("Число " + checkNumber + " является положительным");
+            }
+            if ((checkNumber % 2) == 0) {
+                System.out.println(" и чётным");
+            } else {
+                System.out.println(" и не чётным");
+            }
         }
 
         System.out.println("\n4. Поиск одинаковых цифр в числах");
@@ -66,39 +67,34 @@ class IfElseStatementTheme {
         int onesNum2 = num2 % 10;
         String sameDigits = "";
         String digitPosition = "";
-        System.out.println("В числах "+ num1 + " и " + num2);
+        System.out.print("В числах "+ num1 + " и " + num2 + " одинаковые цифры в разрядах: ");
         if (hundredsNum1 == hundredsNum2 || tensNum1 == tensNum2 || onesNum1 == onesNum2) {
             if (hundredsNum1 == hundredsNum2) {
-                sameDigits = sameDigits + hundredsNum1 + " ";
-                digitPosition = digitPosition + "100 ";
+                System.out.print("100 = " + hundredsNum1);
             }
             if (tensNum1 == tensNum2) {
-                sameDigits = sameDigits + tensNum1 + " ";
-                digitPosition = digitPosition + "10 ";
+                System.out.print(" 10 = " + tensNum1);
             }
             if (onesNum1 == onesNum2) {
-                sameDigits = sameDigits + onesNum1;
-                digitPosition = digitPosition + "1 ";
+                System.out.print(" 1 = " + onesNum1);
             }
-            System.out.println("одинаковые цифры: " + sameDigits);
-            System.out.println("номера разрядов: " + digitPosition);
         } else {
-            System.out.println(" Нет совпадений");
+            System.out.print(" Нет совпадений");
         }
 
-        System.out.println("\n5. Определение символа по его коду");
+        System.out.println("\n\n5. Определение символа по его коду");
         char symbol = '\u007A';
-        if ((symbol <= 'A') && ((symbol > 'Z'))) {
-            System.out.println("Смвол " + symbol + " является большой буквой\n");
-        } else if ((symbol >= '0') && ((symbol <= '9'))) {
-            System.out.println("Символ " + symbol + " является цифрой\n");
-        } else if ((symbol >= 'a') && ((symbol <= 'z'))) {
-            System.out.println("Символ " + symbol + " является маленькой буквой\n");
+        if ((symbol <= 'A') && (symbol > 'Z')) {
+            System.out.println("Символ " + symbol + " является большой буквой");
+        } else if ((symbol >= '0') && (symbol <= '9')) {
+            System.out.println("Символ " + symbol + " является цифрой");
+        } else if ((symbol >= 'a') && (symbol <= 'z')) {
+            System.out.println("Символ " + symbol + " является маленькой буквой");
         } else {
-            System.out.println("Символ " + symbol + " не является не буквой не цифрой\n");
+            System.out.println("Символ " + symbol + " не является не буквой не цифрой");
         }
 
-        System.out.println("6. Подсчет суммы вклада и начисленных банком %");
+        System.out.println("\n6. Подсчет суммы вклада и начисленных банком %");
         int deposit = 310000;
         int credited = 10;
         if (deposit < 100000) {
@@ -106,9 +102,9 @@ class IfElseStatementTheme {
         } else if (deposit < 300000) {
             credited = 7;
         }
-        credited = credited * (deposit / 100);
+        int accrual = credited * (deposit / 100);
         System.out.println("суммa вклада: " + deposit);
-        System.out.println("суммa начисления: " + credited);
+        System.out.println("суммa начисления: " + accrual);
         System.out.println("итоговaя суммa: " + (credited+deposit));
 
         System.out.println("\n7. Определение оценки по предметам");
