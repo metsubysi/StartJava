@@ -2,7 +2,7 @@ public class Wolf {
     
     private String gender;
     private String name;
-    private  float weight;
+    private float weight;
     private int age;
     private String color;
 
