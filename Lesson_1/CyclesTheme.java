@@ -43,7 +43,7 @@ class CyclesTheme {
             int digit = num % 10;
             sumDigits += digit;
             System.out.print(digit);
-            num = num / 10;
+            num /= 10;
         }
         System.out.println("\nCyмма цифр = " + sumDigits);
 
@@ -121,15 +121,15 @@ class CyclesTheme {
         } while (row < 5);
 
         System.out.println("\n7. Отображение ASCII-символов");
-        System.out.printf("%5s %-15s %-32s%n", "DECIMAL", "CHARACTER", "DESCRIPTION");
+        System.out.printf("%5s %-10s %-32s%n", "DECIMAL", "CHARACTER", "DESCRIPTION");
         for (int i = 15; i < 48; i++) {
             if ((i % 2) > 0) {
-                System.out.printf("%-11s %-6c %-20s%n", "  " + i, (char) i, Character.getName((char) i));
+                System.out.printf("%-11s %-11c %-20s%n", "  " + i, (char) i, Character.getName((char) i));
             }
         }
         for (int i = 97; i < 123; i++) {
             if ((i % 2) == 0) {
-                System.out.printf("%-11s %-6c %-20s%n", "  " + i, (char) i, Character.getName((char) i));
+                System.out.printf("%-11s %-11c %-20s%n", "  " + i, (char) i, Character.getName((char) i));
             }
         }
 
