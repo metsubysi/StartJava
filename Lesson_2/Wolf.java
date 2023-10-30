@@ -27,7 +27,7 @@ public class Wolf {
     }
 
     public float getWeight() {
-      return weight;
+        return weight;
     }
 
     public void setAge(int age) {
