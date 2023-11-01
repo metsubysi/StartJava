@@ -14,11 +14,10 @@ class CalculatorTest {
             double num2 = scanner.nextDouble();
             double result = calculator.calculate(num1, operator, num2);
             System.out.println("Результат: " + result);
-            answer = "";
-            while (!(answer.equalsIgnoreCase("no")) && !(answer.equalsIgnoreCase("yes"))) {
+            do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 answer = scanner.next();
-            }
+            } while (!answer.equalsIgnoreCase("no") && !answer.equalsIgnoreCase("yes"));
         }
     }
 }

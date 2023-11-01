@@ -1,6 +1,5 @@
 public class JaegerTest {
     public static void main(String[] args) {
-        Jaeger jaegerChernoAlpha = new Jaeger("Cherno Alpha", "Mark-1", "Russia", 85.34f, 2412.0f, 10, 10);
         Jaeger jaegerSlattern = new Jaeger();
         jaegerSlattern.setModelName("Slattern");
         jaegerSlattern.setMark("Mark-3");
@@ -9,6 +8,8 @@ public class JaegerTest {
         jaegerSlattern.setWeight(2690.0f);
         jaegerSlattern.setStrenght(6);
         jaegerSlattern.setArmor(7);
+        
+        Jaeger jaegerChernoAlpha = new Jaeger("Cherno Alpha", "Mark-1", "Russia", 85.34f, 2412.0f, 10, 10);
         System.out.print(jaegerChernoAlpha.getModelName() + " vs " + jaegerSlattern.getModelName());
         System.out.printf("\n%-15s %-11s", jaegerChernoAlpha.getMark(), jaegerSlattern.getMark());
         System.out.printf("\n%-15s %-11s", jaegerChernoAlpha.getOrigin(), jaegerSlattern.getOrigin());

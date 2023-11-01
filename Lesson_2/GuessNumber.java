@@ -1,7 +1,8 @@
 import java.util.Scanner;
+
 public class GuessNumber {
-    Player player1;
-    Player player2;
+    private Player player1;
+    private Player player2;
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -9,23 +10,22 @@ public class GuessNumber {
     }
 
     public void play() {
-        int targetNum = (int) (Math.random() * 100);
-        targetNum = 4;
+        int targetNum = (int) (Math.random() * 100) + 1;
         int playerNum = 1;
         boolean result = true;
+        Scanner scanner = new Scanner(System.in);
         do {
-            if (playerNum == 1) {
-                result = checkNum(player1, targetNum);
-                playerNum = 2;
+            if (isGuessed(player1, targetNum, scanner)) {
+                if (!isGuessed(player2, targetNum, scanner)) {
+                    result = false;
+                }
             } else {
-                result = checkNum(player2, targetNum);
-                playerNum = 1;
+                result = false;
             }
         } while (result);
     }
 
-    private boolean checkNum(Player player, int targetNum) {
-        Scanner scanner = new Scanner(System.in);
+    private boolean isGuessed(Player player, int targetNum, Scanner scanner) {
         System.out.println(player.getName() + " введите целое число от 0 до 100: ");
         player.setNum(scanner.nextInt());
         if (player.getNum() < targetNum) {

@@ -19,16 +19,6 @@ public class Jaeger {
         this.armor = armor;
     }
 
-    public Jaeger() {
-        modelName = "No name";
-        mark = "no";
-        origin = "no";
-        height = 0.0f;
-        weight = 0.0f;
-        strenght = 0;
-        armor = 0;
-    }
-
     public void setModelName(String modelName) {
         this.modelName = modelName;
     }
@@ -36,6 +26,7 @@ public class Jaeger {
     public String getModelName() {
         return modelName;
     }
+
     public void setMark(String mark) {
         this.mark = mark;
     }
@@ -83,7 +74,6 @@ public class Jaeger {
     public int getArmor() {
         return armor;
     }
-
 
     boolean drift() {
         return true;
