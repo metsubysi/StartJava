@@ -27,16 +27,19 @@ public class GuessNumber {
 
     private boolean isGuessed(Player player, int targetNum, Scanner scanner) {
         System.out.println(player.getName() + " введите целое число от 0 до 100: ");
-        player.setNum(scanner.nextInt());
+        player.setNum(guessedNum(scanner));
         if (player.getNum() < targetNum) {
             System.out.println("Число " + player.getNum() + " меньше того, что загадал компьютер");
             return true;
         } else if (player.getNum() > targetNum) {
             System.out.println("Число " + player.getNum() + " больше того, что загадал компьютер");
             return true;
-        } else {
-            System.out.println(player.getName() + " победитель!!!");
-            return false;
-        }
+        } 
+        System.out.println(player.getName() + " победитель!!!");
+        return false;
+    }
+
+    private int guessedNum(Scanner scanner) {
+        return scanner.nextInt();
     }
 }
