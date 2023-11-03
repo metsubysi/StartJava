@@ -10,17 +10,15 @@ class Calculator {
             case '/':
                 if (num2 != 0) {
                     return num1 / num2;
-                } else {
-                    System.out.println("Деление на 0 не возможно.");
-                    return 0;
                 }
+                System.out.println("Деление на 0 не возможно.");
+                return 0;
             case '%':
                 if (num2 != 0) {
                     return num1 % num2;
-                } else {
-                    System.out.println("Деление на 0 не возможно.");
-                    return 0;
                 }
+                System.out.println("Деление на 0 не возможно.");
+                return 0;
             case '^':
                 return Math.pow(num1, num2);
             default:

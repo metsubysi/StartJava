@@ -7,14 +7,14 @@ public class GuessNumberTest {
         Player player1 = new Player(scanner.next());
         System.out.print("Введите имя игрока - 2: ");
         Player player2 = new Player(scanner.next());
-        GuessNumber guessNumber = new GuessNumber(player1, player2);
+        GuessNumber game = new GuessNumber(player1, player2);
         String answer;
         do {
-            guessNumber.play();
+            game.play();
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-                answer = scanner.next();
-            } while (!answer.equalsIgnoreCase("no") && !answer.equalsIgnoreCase("yes"));
-        } while (answer.equalsIgnoreCase("yes"));
+                answer = scanner.next().toLowerCase();
+            } while (!answer.equals("no") && !answer.equals("yes"));
+        } while (answer.equals("yes"));
     }
 }

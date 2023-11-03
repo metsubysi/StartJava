@@ -5,7 +5,7 @@ class CalculatorTest {
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
         String answer = "yes";
-        while (answer.equalsIgnoreCase("yes")) {
+        do {
             System.out.print("Введите первое число: ");
             double num1 = scanner.nextDouble();
             System.out.print("Введите знак математической операции: ");
@@ -16,8 +16,8 @@ class CalculatorTest {
             System.out.println("Результат: " + result);
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-                answer = scanner.next();
-            } while (!answer.equalsIgnoreCase("no") && !answer.equalsIgnoreCase("yes"));
-        }
+                answer = scanner.next().toLowerCase();;
+            } while (!answer.equals("no") && !answer.equals("yes"));
+        } while (answer.equals("yes"));
     }
 }
