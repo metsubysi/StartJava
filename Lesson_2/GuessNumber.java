@@ -13,22 +13,20 @@ public class GuessNumber {
         int targetNum = (int) (Math.random() * 100) + 1;
         Scanner scanner = new Scanner(System.in);
         do {
-            if (!isGuessed(player1, targetNum, scanner)) {
-                if (isGuessed(player2, targetNum, scanner)) {
-                    return true;
-                }
-            } else {
+            if (isGuessed(player1, targetNum, scanner)) {
+                return true;
+            }
+            if (isGuessed(player2, targetNum, scanner)) {
                 return true;
             }
         } while (true);
     }
 
     private boolean isGuessed(Player player, int targetNum, Scanner scanner) {
-        player.setNum(guessedNum(scanner, player));
+        player.setNum(guessNum(scanner, player));
         if (player.getNum() < targetNum) {
             System.out.println("Число " + player.getNum() + " меньше того, что загадал компьютер");
-        }
-        if (player.getNum() > targetNum) {
+        } else if (player.getNum() > targetNum) {
             System.out.println("Число " + player.getNum() + " больше того, что загадал компьютер");
         } 
         if ((player.getNum() < targetNum) || (player.getNum() > targetNum)) {
@@ -38,7 +36,7 @@ public class GuessNumber {
         return true;
     }
 
-    private int guessedNum(Scanner scanner, Player player) {
+    private int guessNum(Scanner scanner, Player player) {
         System.out.println(player.getName() + " введите целое число от 0 до 100: ");
         return scanner.nextInt();
     }
