@@ -24,16 +24,16 @@ public class GuessNumber {
 
     private boolean isGuessed(Player player, int targetNum, Scanner scanner) {
         player.setNum(guessNum(scanner, player));
+        if (player.getNum() == targetNum) {
+            System.out.println(player.getName() + " победитель!!!");
+            return true;
+        }
         if (player.getNum() < targetNum) {
             System.out.println("Число " + player.getNum() + " меньше того, что загадал компьютер");
-        } else if (player.getNum() > targetNum) {
+        } else {
             System.out.println("Число " + player.getNum() + " больше того, что загадал компьютер");
-        } 
-        if ((player.getNum() < targetNum) || (player.getNum() > targetNum)) {
-            return false;
         }
-        System.out.println(player.getName() + " победитель!!!");
-        return true;
+        return false;
     }
 
     private int guessNum(Scanner scanner, Player player) {
