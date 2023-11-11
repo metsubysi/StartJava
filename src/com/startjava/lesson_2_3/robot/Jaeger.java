@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.robot;
+
 public class Jaeger {
     
     private String modelName;
@@ -7,6 +9,10 @@ public class Jaeger {
     private float weight;
     private int strenght;
     private int armor;
+
+    public Jaeger() {
+        
+    }
 
     public Jaeger(String modelName, String mark, String origin, 
             float height, float weight, int strenght, int armor) {
