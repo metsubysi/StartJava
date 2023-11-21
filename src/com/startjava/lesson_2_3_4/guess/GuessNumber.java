@@ -1,8 +1,8 @@
-package com.startjava.lesson_2_3.guess;
+package com.startjava.lesson_2_3_4.guess;
 
 import java.util.Scanner;
 
-public class GuessNumber {
+public class ArraysTheme {
     private Player player1;
     private Player player2;
 
