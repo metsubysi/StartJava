@@ -8,95 +8,99 @@ class ArraysTheme {
         System.out.println(" 1. Реверс значений массива");
         reverseArrayValues();
         System.out.println("\n 2. Произведение элементов массива");
-        calculateArrayProduct();
+        multiplyArrayElements();
         System.out.println("\n 3. Удаление элементов массива");
-        removeArrayElement();
+        removeArrayElements();
         System.out.println("\n 4. Вывод алфавита лесенкой");
         printAlphabetStepwise();
         System.out.println("\n 5. Заполнение массива уникальными числами");
-        fillArrayWithUniqueNumbers();
+        addUniqueNumsToArray();
     }
 
     static void reverseArrayValues() {
-        int[] array = {2, 4, 6, 1, 3, 5, 7};
-        int[] arrayRevers = new int[7];
-        int i = 6;
-        for (int a : array) {
-            arrayRevers[i] = a;
-            i--;
-        }
+        int[] integerArray = {2, 4, 6, 1, 3, 5, 7};
         System.out.print("До реверса: ");
-        printIntArray(array);
+        printIntArray(integerArray);
+        int lengthArray = integerArray.length;
+        int temp;
+        for (int i = 0; i < lengthArray / 2; i++) {
+            temp = integerArray[i];
+            integerArray[i] = integerArray[lengthArray - i - 1];
+            integerArray[lengthArray - i - 1] = temp;
+        }
         System.out.print("После реверса: ");
-        printIntArray(arrayRevers);
+        printIntArray(integerArray);
     }
 
-    static void calculateArrayProduct() {
-        int[] array = new int[10];
-        for(int i = 0; i < 10; i++) {
-            array[i] = i;
+    static void multiplyArrayElements() {
+        int[] numbersInRangeArray = new int[10];
+        int lengthArray = numbersInRangeArray.length;
+        for(int i = 0; i < lengthArray; i++) {
+            numbersInRangeArray[i] = i;
         }
         int product = 1;
-        for(int i = 1; i < 9; i++) {
-            if (i == 8) {
-                System.out.print(array[i] + " = ");
-            } else {
-                System.out.print(array[i] + " * ");
-            }
-            product *= array[i];
+        for(int i = 1; i < lengthArray - 1; i++) {
+            String sign = i == lengthArray - 2 ? " = " : " * ";
+            System.out.print(numbersInRangeArray[i] + sign);
+            product *= numbersInRangeArray[i];
         }
         System.out.println(product);
     }
 
-    static void removeArrayElement() {
-        double[] array = new double[15];
+    static void removeArrayElements() {
+        double[] realArray = new double[15];
         Random random = new Random();
-        for(int i = 1; i < 15; i++) {
-            array[i] = random.nextDouble();
+        int lengthArray = realArray.length;
+        for(int i = 1; i < lengthArray; i++) {
+            realArray[i] = random.nextDouble();
         }
-        printDoubleArray(array);
-        int middleNumber = array.length / 2;
-        int countResettableElements = 0;
-        for(int i = 1; i < 15; i++) {
-            if (array[i] > array[middleNumber]) {
-                array[i] = 0;
-                countResettableElements++;
+        printDoubleArray(realArray);
+        int middleNumber = lengthArray / 2;
+        int countZeros = 0;
+        for(int i = 1; i < lengthArray; i++) {
+            if (realArray[i] > realArray[middleNumber]) {
+                realArray[i] = 0;
+                countZeros++;
             }
         }
-        printDoubleArray(array);
-        System.out.println("количество обнуленных ячеек: " + countResettableElements);
+        printDoubleArray(realArray);
+        System.out.println("количество обнуленных ячеек: " + countZeros);
     }
 
     static void printAlphabetStepwise() {
-        char[] array = new char[26];
-        for (int i = 0; i < 26; i++) {
-            array[i] = (char) ('A' + i);
+        char[] capitalLatinLetterArray = new char[26];
+        int lengthArray = capitalLatinLetterArray.length;
+        for (int i = 0; i < lengthArray; i++) {
+            capitalLatinLetterArray[i] = (char) ('A' + i);
         }
-        for (int i = 25; i >= 0; i--) {
-            for (int j = 25; j >= i; j--) {
-                System.out.print(array[j]);
+        for (int i = lengthArray - 1; i >= 0; i--) {
+            for (int j = lengthArray - 1; j >= i; j--) {
+                System.out.print(capitalLatinLetterArray[j]);
             }
             System.out.println();
         }
     }
 
-    static void fillArrayWithUniqueNumbers() {
-        int[] array = new int[30];
-        for (int i = 0; i < 30; i++) {
+    static void addUniqueNumsToArray() {
+        int[] uniqueIntegerArray = new int[30];
+        int lengthArray = uniqueIntegerArray.length;
+        int randomNumber;
+        for (int i = 0; i < lengthArray; i++) {
             int count = 0;
             do {
                 count = 0;
-                array[i] = (int)(Math.random() * 40 + 60);
+                randomNumber = (int)(Math.random() * 40 + 60);
                 for (int j = 0; j < i; j++) {
-                    if (array[i] == array[j]) {
+                    if (randomNumber == uniqueIntegerArray[j]) {
                         count++;
                     }
                 }
             } while (count > 0);
+            uniqueIntegerArray[i] = randomNumber;
         }
-        bubbleSort(array);
-        for(int i = 0; i < 30; i++) {
-            System.out.print(array[i]);
+        bubbleSort(uniqueIntegerArray);
+        for(int i = 0; i < lengthArray; i++) {
+            System.out.print(uniqueIntegerArray[i]);
             if ((i + 1) % 10 == 0) {
                 System.out.println();
             }
