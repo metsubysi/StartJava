@@ -12,114 +12,111 @@ class ArraysTheme {
         System.out.println("\n 3. Удаление элементов массива");
         removeArrayElements();
         System.out.println("\n 4. Вывод алфавита лесенкой");
-        printAlphabetStepwise();
+        printAlphabetWithStairs();
         System.out.println("\n 5. Заполнение массива уникальными числами");
-        addUniqueNumsToArray();
+        fillArrayUniqueNumbers();
     }
 
     static void reverseArrayValues() {
-        int[] integerArray = {2, 4, 6, 1, 3, 5, 7};
+        int[] integerType = {2, 4, 6, 1, 3, 5, 7};
         System.out.print("До реверса: ");
-        printIntArray(integerArray);
-        int lengthArray = integerArray.length;
-        int temp;
-        for (int i = 0; i < lengthArray / 2; i++) {
-            temp = integerArray[i];
-            integerArray[i] = integerArray[lengthArray - i - 1];
-            integerArray[lengthArray - i - 1] = temp;
+        printInt(integerType);
+        int length = integerType.length;
+        for (int i = 0; i < length; i++) {
+            length--;
+            int temp = integerType[i];
+            integerType[i] = integerType[length];
+            integerType[length] = temp;
         }
         System.out.print("После реверса: ");
-        printIntArray(integerArray);
+        printInt(integerType);
     }
 
     static void multiplyArrayElements() {
-        int[] numbersInRangeArray = new int[10];
-        int lengthArray = numbersInRangeArray.length;
-        for(int i = 0; i < lengthArray; i++) {
-            numbersInRangeArray[i] = i;
+        int[] multipliers = new int[10];
+        int length = multipliers.length;
+        for(int i = 0; i < length; i++) {
+            multipliers[i] = i;
         }
         int product = 1;
-        for(int i = 1; i < lengthArray - 1; i++) {
-            String sign = i == lengthArray - 2 ? " = " : " * ";
-            System.out.print(numbersInRangeArray[i] + sign);
-            product *= numbersInRangeArray[i];
+        for(int i = 1; i < length - 1; i++) {
+            String sign = i == length - 2 ? " = " : " * ";
+            System.out.print(multipliers[i] + sign);
+            product *= multipliers[i];
         }
         System.out.println(product);
     }
 
     static void removeArrayElements() {
-        double[] realArray = new double[15];
+        double[] realNumbers = new double[15];
         Random random = new Random();
-        int lengthArray = realArray.length;
-        for(int i = 1; i < lengthArray; i++) {
-            realArray[i] = random.nextDouble();
+        int length = realNumbers.length;
+        for(int i = 1; i < length; i++) {
+            realNumbers[i] = random.nextDouble();
         }
-        printDoubleArray(realArray);
-        int middleNumber = lengthArray / 2;
+        printDouble(realNumbers);
+        double middleNumber = realNumbers[length / 2];
         int countZeros = 0;
-        for(int i = 1; i < lengthArray; i++) {
-            if (realArray[i] > realArray[middleNumber]) {
-                realArray[i] = 0;
+        for(int i = 1; i < length; i++) {
+            if (realNumbers[i] > middleNumber) {
+                realNumbers[i] = 0;
                 countZeros++;
             }
         }
-        printDoubleArray(realArray);
+        printDouble(realNumbers);
         System.out.println("количество обнуленных ячеек: " + countZeros);
     }
 
-    static void printAlphabetStepwise() {
-        char[] capitalLatinLetterArray = new char[26];
-        int lengthArray = capitalLatinLetterArray.length;
-        for (int i = 0; i < lengthArray; i++) {
-            capitalLatinLetterArray[i] = (char) ('A' + i);
+    static void printAlphabetWithStairs() {
+        char[] alphabet = new char[26];
+        int length = alphabet.length;
+        for (int i = 0; i < length; i++) {
+            alphabet[i] = (char) ('A' + i);
         }
-        for (int i = lengthArray - 1; i >= 0; i--) {
-            for (int j = lengthArray - 1; j >= i; j--) {
-                System.out.print(capitalLatinLetterArray[j]);
+        for (int i = length - 1; i >= 0; i--) {
+            for (int j = length - 1; j >= i; j--) {
+                System.out.print(alphabet[j]);
             }
             System.out.println();
         }
     }
 
-    static void addUniqueNumsToArray() {
-        int[] uniqueIntegerArray = new int[30];
-        int lengthArray = uniqueIntegerArray.length;
+    static void fillArrayUniqueNumbers() {
+        int[] uniqueNumbers = new int[30];
+        int length = uniqueNumbers.length;
         int randomNumber;
-        for (int i = 0; i < lengthArray; i++) {
+        for (int i = 0; i < length; i++) {
             int count = 0;
             do {
                 count = 0;
-                randomNumber = (int)(Math.random() * 40 + 60);
+                randomNumber = (int) (Math.random() * 40 + 60);
                 for (int j = 0; j < i; j++) {
-                    if (randomNumber == uniqueIntegerArray[j]) {
+                    if (randomNumber == uniqueNumbers[j]) {
                         count++;
                     }
                 }
             } while (count > 0);
-            uniqueIntegerArray[i] = randomNumber;
+            uniqueNumbers[i] = randomNumber;
         }
-        bubbleSort(uniqueIntegerArray);
-        for(int i = 0; i < lengthArray; i++) {
-            System.out.print(uniqueIntegerArray[i]);
+        bubbleSort(uniqueNumbers);
+        for(int i = 0; i < length; i++) {
+            System.out.print(uniqueNumbers[i] + " ");
             if ((i + 1) % 10 == 0) {
                 System.out.println();
             }
         }
     }
 
-    static void printIntArray(int[] array) {
+    static void printInt(int[] array) {
         System.out.print("[");
         for (int i = 0; i < array.length; i++) {
-            if (i == 0) {
-                System.out.print(array[i]);
-            } else {
-                System.out.print(", " + array[i]);
-            }
+            String sign = (i == 0) ? "" : ", ";
+            System.out.print(sign + array[i]);
         }
         System.out.println("]");
     }
     
-    static void printDoubleArray(double[] array) {
+    static void printDouble(double[] array) {
         DecimalFormat decimalFormat = new DecimalFormat("#0.000");
         String formattedElement;
         for (int i = 0; i < array.length; i++) {
