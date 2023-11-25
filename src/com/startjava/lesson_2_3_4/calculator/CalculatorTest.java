@@ -1,6 +1,7 @@
 package com.startjava.lesson_2_3_4.calculator;
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 class CalculatorTest {
     public static void main(String[] args) {
@@ -16,12 +17,15 @@ class CalculatorTest {
             char operator = mathExpressionArray[1].charAt(0);
             double result = calculator.calculate(num1, operator, num2);
             if (result != Double.MIN_VALUE) {
-                System.out.println(mathExpression + " = " + result);
+                DecimalFormat df = new DecimalFormat("#.###");
+                String resultFormat = df.format(result);
+                System.out.println(mathExpression + " = " + resultFormat);
             }
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 answer = scanner.next().toLowerCase();;
             } while (!answer.equals("no") && !answer.equals("yes"));
+            System.out.println();
         } while (answer.equals("yes"));
     }
 }

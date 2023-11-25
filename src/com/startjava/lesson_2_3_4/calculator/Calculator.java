@@ -11,7 +11,7 @@ class Calculator {
                 return num1 * num2;
             case '/':
                 if (num2 != 0) {
-                    return num1 / num2;
+                    return (double) num1 / num2;
                 }
                 System.out.println("Деление на 0 не возможно.");
                 return 0;
