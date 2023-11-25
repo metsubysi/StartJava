@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3_4.calculator;
 
 import java.util.Scanner;
 
@@ -8,14 +8,16 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
         String answer = "yes";
         do {
-            System.out.print("Введите первое число: ");
-            double num1 = scanner.nextDouble();
-            System.out.print("Введите знак математической операции: ");
-            char operator = scanner.next().charAt(0);
-            System.out.print("Введите второе число: ");
-            double num2 = scanner.nextDouble();
+            System.out.print("Введите выражение: ");
+            String mathExpression = scanner.nextLine();
+            String[] mathExpressionArray = mathExpression.split(" ");
+            int num1 = Integer.parseInt(mathExpressionArray[0]);
+            int num2 = Integer.parseInt(mathExpressionArray[2]);
+            char operator = mathExpressionArray[1].charAt(0);
             double result = calculator.calculate(num1, operator, num2);
-            System.out.println("Результат: " + result);
+            if (result != Double.MIN_VALUE) {
+                System.out.println(mathExpression + " = " + result);
+            }
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 answer = scanner.next().toLowerCase();;

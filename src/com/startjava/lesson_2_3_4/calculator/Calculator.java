@@ -1,7 +1,7 @@
-package com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3_4.calculator;
 
 class Calculator {
-    public double calculate(double num1, char operator, double num2) {
+    public double calculate(int num1, char operator, int num2) {
         switch (operator) {
             case '+':
                 return num1 + num2;
@@ -24,8 +24,8 @@ class Calculator {
             case '^':
                 return Math.pow(num1, num2);
             default:
-                System.out.println("Bведенная мат. операция не поддерживается.");
-                return 0;
+                System.out.println("Ошибка: знак " + operator + " не поддерживается");
+                return Double.MIN_VALUE;
         }
     }
 }
