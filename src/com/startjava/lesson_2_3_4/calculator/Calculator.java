@@ -1,28 +1,32 @@
 package com.startjava.lesson_2_3_4.calculator;
 
 class Calculator {
-    public double calculate(int num1, char operator, int num2) {
+    public double calculate(String str) {
+        String[] elements = str.split(" ");
+            int a = Integer.parseInt(elements[0]);
+            int b = Integer.parseInt(elements[2]);
+            char operator = elements[1].charAt(0);
         switch (operator) {
             case '+':
-                return num1 + num2;
+                return a + b;
             case '-':
-                return num1 - num2;
+                return a - b;
             case '*':
-                return num1 * num2;
+                return a * b;
             case '/':
-                if (num2 != 0) {
-                    return (double) num1 / num2;
+                if (b != 0) {
+                    return (double) a / b;
                 }
                 System.out.println("Деление на 0 не возможно.");
-                return 0;
+                return Double.MIN_VALUE;
             case '%':
-                if (num2 != 0) {
-                    return num1 % num2;
+                if (b != 0) {
+                    return a % b;
                 }
                 System.out.println("Деление на 0 не возможно.");
-                return 0;
+                return Double.MIN_VALUE;
             case '^':
-                return Math.pow(num1, num2);
+                return Math.pow(a, b);
             default:
                 System.out.println("Ошибка: знак " + operator + " не поддерживается");
                 return Double.MIN_VALUE;

@@ -18,18 +18,17 @@ class ArraysTheme {
     }
 
     static void reverseArrayValues() {
-        int[] integerType = {2, 4, 6, 1, 3, 5, 7};
+        int[] numbers = {2, 4, 6, 1, 3, 5, 7};
         System.out.print("До реверса: ");
-        printInt(integerType);
-        int length = integerType.length;
+        printInt(numbers);
+        int length = numbers.length;
         for (int i = 0; i < length; i++) {
-            length--;
-            int temp = integerType[i];
-            integerType[i] = integerType[length];
-            integerType[length] = temp;
+            int temp = numbers[i];
+            numbers[i] = numbers[length--];
+            numbers[length] = temp;
         }
         System.out.print("После реверса: ");
-        printInt(integerType);
+        printInt(numbers);
     }
 
     static void multiplyArrayElements() {
