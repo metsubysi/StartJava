@@ -8,18 +8,23 @@ class CalculatorTest {
         Scanner scanner = new Scanner(System.in);
         String answer = "yes";
         do {
-            System.out.print("Введите выражение: ");
-            String mathExpression = scanner.nextLine();
-            print(mathExpression);
+            if (answer.equals("yes")) {
+                System.out.print("Введите выражение: ");
+                String mathExpression = scanner.nextLine();
+                Calculator calculator = new Calculator();
+                double result = calculator.calculate(mathExpression);
+                print(result, mathExpression);
+            }
             System.out.print("Хотите продолжить вычисления? [yes/no]: ");
             answer = scanner.next().toLowerCase();
+            if ("no".equals(answer)) {
+                break;
+            }
             scanner.nextLine();
-        } while (answer.equals("yes"));
+        } while (!answer.equals("no"));
     }
 
-    static void print(String str) {
-        Calculator calculator = new Calculator();
-        double result = calculator.calculate(str);
+    static void print(double result, String str) {
         if (result != Double.MIN_VALUE) {
             DecimalFormat df = new DecimalFormat("#.###");
             String resultFormat = df.format(result);
