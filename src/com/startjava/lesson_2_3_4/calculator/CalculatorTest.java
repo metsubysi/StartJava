@@ -11,24 +11,28 @@ class CalculatorTest {
             if (answer.equals("yes")) {
                 System.out.print("Введите выражение: ");
                 String mathExpression = scanner.nextLine();
-                Calculator calculator = new Calculator();
-                double result = calculator.calculate(mathExpression);
-                print(result, mathExpression);
+                double result;
+                try {
+                    result = Calculator.calculate(mathExpression);
+                    print(result, mathExpression);
+                } catch (ArithmeticException e) {
+                    System.out.println("Деление но ноль не возможно");
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Введёные аргументы не являются целыми положительными числами");
+                } catch (Exception e) {
+                    System.out.println("Bведены не удовлетворяющие условиям данные");
+                }
+                
             }
             System.out.print("Хотите продолжить вычисления? [yes/no]: ");
             answer = scanner.next().toLowerCase();
-            if ("no".equals(answer)) {
-                break;
-            }
             scanner.nextLine();
         } while (!answer.equals("no"));
     }
 
-    static void print(double result, String str) {
-        if (result != Double.MIN_VALUE) {
-            DecimalFormat df = new DecimalFormat("#.###");
-            String resultFormat = df.format(result);
-            System.out.println(str + " = " + resultFormat);
-        }
+    static void print(double result, String mathExpression) {
+        String resultFormat = (result != Double.MIN_VALUE) ? 
+                        mathExpression + " = " + new DecimalFormat("#.###").format(result) : "";
+        System.out.println(resultFormat);
     }
 }
