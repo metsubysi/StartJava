@@ -7,20 +7,23 @@ class CalculatorTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String answer = "yes";
+        String mathExpression;
         do {
             if (answer.equals("yes")) {
-                System.out.print("Введите выражение: ");
-                String mathExpression = scanner.nextLine();
-                double result;
+                do {
+                    System.out.print("Введите выражение: ");
+                    mathExpression = scanner.nextLine();
+                } while (mathExpression.length() == 0);
                 try {
-                    result = Calculator.calculate(mathExpression);
+                    double result = Calculator.calculate(mathExpression);
                     print(result, mathExpression);
                 } catch (ArithmeticException e) {
                     System.out.println("Деление но ноль не возможно");
                 } catch (IllegalArgumentException e) {
-                    System.out.println("Введёные аргументы не являются целыми положительными числами");
+                    System.out.println("Введённые аргументы не являются целыми положительными числами");
                 } catch (Exception e) {
-                    System.out.println("Bведены не удовлетворяющие условиям данные");
+                    System.out.println("Bведены не удовлетворяющие условиям данные," +
+                                        "введите выражение типа: a + b, где + любой знак мат. операции");
                 }
                 
             }
@@ -31,8 +34,8 @@ class CalculatorTest {
     }
 
     static void print(double result, String mathExpression) {
-        String resultFormat = (result != Double.MIN_VALUE) ? 
-                        mathExpression + " = " + new DecimalFormat("#.###").format(result) : "";
+        String resultFormat = (result != Double.MIN_VALUE) ? mathExpression +
+                        " = " + new DecimalFormat("#.###").format(result) : "";
         System.out.println(resultFormat);
     }
 }
