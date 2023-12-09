@@ -6,7 +6,8 @@ public class Player {
     
     private String name;
     private int[] nums = new int[10];
-    public int attemptsCount = 0;
+    private int attemptsCount;
+    public boolean isSetNum = false;
 
     public Player(String name) {
         this.name = name;
@@ -17,7 +18,7 @@ public class Player {
     }
 
     public void setNum(int num) {
-        this.nums[attemptsCount] = num;
+            nums[attemptsCount] = num;
     }
 
     public int getNum() {
@@ -28,19 +29,19 @@ public class Player {
         this.attemptsCount = attemptsCount;
     }
 
+    public void incrementAttemptsCount() {
+        attemptsCount++;
+    }
+
     public int getAttemptsCount() {
         return attemptsCount;
     }
 
-    public void printNums() {
-        int[] nums = Arrays.copyOfRange(this.nums, 0, attemptsCount);
-        for(int i = 0; i < attemptsCount; i++) {
-            System.out.print(nums[i] + " ");
-        }
-        System.out.println();
+    public int[] getNums() {
+        return nums;
     }
 
-    public void arrayNull() {
+    public void clear() {
         Arrays.fill(nums, 0, attemptsCount, 0);
     }
 }
