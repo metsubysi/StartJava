@@ -5,28 +5,38 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class GuessNumber {
-    private Player player1;
-    private Player player2;
+    private Player[] player;
+    private int gameNumber = 0;
 
-    public GuessNumber(Player player1, Player player2) {
-        this.player1 = player1;
-        this.player2 = player2;
+    public GuessNumber(Player[] player) {
+        this.player = player;
     }
 
     public boolean play() {
         int targetNum = (int) (Math.random() * 100) + 1;
         do {
-            if ((isGuessed(player1, targetNum)) && (player1.getAttemptsCount() != 10)) {
-                finish(player1);
-                System.out.println();
-                finish(player2);
-                return true;
-            }
-            if (isGuessed(player2, targetNum)) {
-                finish(player1);
-                System.out.println();
-                finish(player2);
-                return true;
+            for (int i = 0; i < player.length; i++) {
+                if (isGuessed(player[i], targetNum)) {
+                    if ((player[i].getAttemptsCount() != 10)) {
+                        player[i].wins++;
+                        for (int j = 0; j < player.length; j++) {
+                            finish(player[j]);
+                            System.out.println();
+                            gameNumber++;
+                            if (gameNumber == 3) {
+                                gameNumber = 0;
+                                printWins(player);
+                            }
+                        }
+                        return true;
+                    } else if (i == 2) {
+                        for (int j = 0; j < player.length; j++) {
+                            finish(player[j]);
+                            System.out.println();
+                        }
+                        return true;
+                    }
+                }
             }
         } while (true);
     }
@@ -65,7 +75,7 @@ public class GuessNumber {
         try {
             System.out.println(player.getName() + " введите целое число от 0 до 100: ");
             return scanner.nextInt();
-        } catch (Exception e) { System.out.println("ff"); }
+        } catch (Exception e) {}
         return 0;
     }
 
@@ -74,6 +84,18 @@ public class GuessNumber {
         printNums(player);
         player.clear();
         player.setAttemptsCount(0);
+    }
+
+    private void printWins(Player[] player) {
+        int max = player[0].getWins();
+        int j = 0;
+        for (int i = 1; i < player.length; i++) {
+            if (player[i].wins > max) {
+                max = player[i].wins;
+                j = i;
+            }
+        }
+        System.out.println("по результатам трёх раундов победил игрок " + player[j].getName());
     }
 
     private void printNums(Player player) {

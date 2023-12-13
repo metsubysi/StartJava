@@ -7,6 +7,7 @@ public class Player {
     private String name;
     private int[] nums = new int[10];
     private int attemptsCount;
+    public int wins = 0;
     public boolean isSetNum = false;
 
     public Player(String name) {
@@ -27,6 +28,10 @@ public class Player {
 
     public void setAttemptsCount(int attemptsCount) {
         this.attemptsCount = attemptsCount;
+    }
+
+    public int getWins() {
+        return wins;
     }
 
     public void incrementAttemptsCount() {
